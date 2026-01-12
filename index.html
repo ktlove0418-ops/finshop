@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <title>
+    finshop Dashboard
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons
+  <link href="https://demos.creative-tim.com/argon-dashboard-pro/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="https://demos.creative-tim.com/argon-dashboard-pro/assets/css/nucleo-svg.css" rel="stylesheet" />
+   --><!-- Font Awesome Icons -->
+
+  <!-- CSS Files -->
+  <link id="pagestyle" href="./assets/css/argon-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+  <script src="assets/js/vue/vue3.js"></script>
+  <!-- axios -->
+  <script src="assets/js/axios/axios.0.9.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="">
+  <!-- Navbar -->
+  <!-- <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent mt-4">
+    <div class="container">
+      <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="../pages/dashboard.html">
+        Argon Dashboard 3
+      </a>
+      <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon mt-2">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
+              <i class="fa fa-chart-pie opacity-6  me-1"></i>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" href="../pages/profile.html">
+              <i class="fa fa-user opacity-6  me-1"></i>
+              Profile
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" href="../pages/sign-up.html">
+              <i class="fas fa-user-circle opacity-6  me-1"></i>
+              Sign Up
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" href="../pages/sign-in.html">
+              <i class="fas fa-key opacity-6  me-1"></i>
+              Sign In
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav d-lg-block d-none">
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com/product/argon-dashboard" class="btn btn-sm mb-0 me-1 bg-gradient-light">Free Download</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+  <!-- End Navbar -->
+  <main class="main-content mt-0" id="app">
+    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg"
+      style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg'); background-position: top;">
+      <span class="mask bg-gradient-dark opacity-6"></span>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 text-center mx-auto">
+            <h1 class="text-white mb-2 mt-5">finshop.pro</h1>
+            <p class="text-lead text-white">Welcome to system</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center">
+        <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
+          <div class="card z-index-0">
+            <div class="card-header text-center pt-4">
+              <h5>เข้าสู่ระบบ</h5>
+            </div>
+            <div class="card-body pt-0">
+              <form role="form">
+                <div class="mb-3">
+                  <input type="text" v-model="username" id="user-login" class="form-control" placeholder="Name"
+                    aria-label="Name">
+                  <span v-if="usersError">{{textError}}</span>
+                </div>
+                <!-- <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+                </div> -->
+                <div class="mb-3">
+                  <input type="password" id="pass-login" v-model="password" class="form-control" placeholder="Password"
+                    aria-label="Password">
+                  <span v-if="passError">{{textError}}</span>
+                </div>
+                <!-- <div class="form-check form-check-info text-start">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                  <label class="form-check-label" for="flexCheckDefault">
+                    I agree the <a href="javascript:;" class="text-dark font-weight-bolder">Terms and Conditions</a>
+                  </label>
+                </div> -->
+                <div class="text-center">
+                  <button type="button" @click="getLogin" class="btn bg-gradient-dark w-100 my-4 mb-2">เข้าระบบ</button>
+                </div>
+                <!-- <p class="text-sm mt-3 mb-0">Already have an account? <a href="javascript:;" class="text-dark font-weight-bolder">Sign in</a></p> -->
+              </form>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+              <div v-if="!isApp">
+                <a href="./app/android/app-release.apk"> 
+                  <div class="btn border m-1">
+                     <img width="30" src="data:image/png;base64,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" alt="">
+                    ดาวน์โหลดแอพ
+                  </div>
+                </a>
+              </div>
+              <div class="d-none">
+                <a href="./app/android/app-release.apk"> 
+                  <div class="btn border m-1">
+                     <img width="30" src="data:image/png;base64,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" alt="">
+                    ดาวน์โหลดแอพ
+                  </div>
+                </a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+  <footer class="footer py-5">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-8 mx-auto text-center mt-1">
+          <p class="mb-0 text-secondary">
+            <!-- Copyright  -->
+            ©
+            <script>
+              document.write(new Date().getFullYear())
+            </script> Soft by <img src="./assets/img/lgg.png" width="20" alt="logo">ɢɪɢᴀᴊᴜ ꜱᴛᴜᴅɪᴏ.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+  <!--   Core JS Files   -->
+  <script src="./assets/js/core/popper.min.js"></script>
+  <script src="./assets/js/core/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="./assets/js/argon-dashboard.min.js?v=2.1.0"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script type="module">
+    const {
+      createApp
+    } = Vue;
+    createApp({
+      data() {
+        return {
+          auth: '',
+          usersError: false,
+          passError: false,
+          textError: '',
+          isInApp: false,
+          isApp: false,
+          userAgent: navigator.userAgent
+        };
+      },
+
+      mounted() {
+        let ua = navigator.userAgent.toLowerCase();
+        console.log("UA:", ua); // ดูค่าใน console ของ browser
+
+        // ตัวอย่างการเช็ค (เบื้องต้น)
+        if (ua.includes('wv') || ua.includes('myapp') || ua.includes('android')) {
+          this.isApp = true;
+        }
+        const profile = localStorage.getItem("Fin-Profile");
+
+        if (!profile || profile === "undefined" || profile == null) { // ตรวจสอบว่าค่าเป็น null, undefined หรือ "undefined"
+          Swal.fire({
+            toast: true,
+            position: 'top-end', // ตำแหน่งของ Toast
+            icon: "warning", //ไอคอน (success, error, warning, info, question)
+            title: "session die !", // ข้อความหลัก
+            showConfirmButton: false, // ไม่แสดงปุ่มยืนยัน
+            timer: 3000, // ระยะเวลาแสดง (ms)
+            timerProgressBar: true, // แสดงแถบเวลา
+          });
+        } else {
+          const parsedProfile = JSON.parse(profile); // แปลง JSON เฉพาะเมื่อค่าถูกต้อง
+          console.log('parsedProfile',parsedProfile);
+          // window.location = parsedProfile.redirect;
+        }
+      },
+      methods: {
+        getBack() {
+          window.location = '../top'
+        },
+        formatThaiDate(dateStr) {
+          return dayjs(dateStr).format("HH:mm");
+          // return dayjs(dateStr).format("D MMMM YYYY เวลา HH:mm");
+        },
+
+        showToast(txt, icn) {
+          Swal.fire({
+            toast: true,
+            position: 'top-end', // ตำแหน่งของ Toast
+            icon: icn, // ไอคอน (success, error, warning, info, question)
+            title: txt, // ข้อความหลัก
+            showConfirmButton: false, // ไม่แสดงปุ่มยืนยัน
+            timer: 5000, // ระยะเวลาแสดง (ms)
+            timerProgressBar: true, // แสดงแถบเวลา
+          });
+        },
+        
+        async getLogin() {
+          if (this.username == '') {
+            this.usersError = true;
+            this.passError = false;
+            this.textError = 'กรุณากรอก ชื่อเข้าใช้งาน';
+            $("#user-login").focus();
+            return false;
+          } else if (this.password == '') {
+            this.usersError = false;
+            this.passError = true;
+            this.textError = 'กรุณากรอกรหัสผ่าน';
+            $("#pass-login").focus();
+            return false;
+          } else {
+            this.usersError = false;
+            this.passError = false;
+
+            try {
+              const url = './api/';
+              const config = {
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+              }
+              await axios.post(url, {
+                post: 'login',
+                username: this.username,
+                password: this.password
+              }, config).then(function (response) {
+                if (response.data.status) {
+                  localStorage.setItem("Fin_Token", JSON.stringify(response.data.access_token));
+                  localStorage.setItem("Fin-Profile", JSON.stringify(response.data));
+                  Swal.fire({
+                    toast: true,
+                    position: 'top-end', // ตำแหน่งของ Toast
+                    icon: 'success', // ไอคอน (success, error, warning, info, question)
+                    title: response.data.msg, // ข้อความหลัก
+                    showConfirmButton: false, // ไม่แสดงปุ่มยืนยัน
+                    timer: 5000, // ระยะเวลาแสดง (ms)
+                    timerProgressBar: true, // แสดงแถบเวลา
+                  });
+                  setTimeout(() => {
+                    window.location = './' + response.data.redirect;
+                  }, 1200);
+                } else {
+                  Swal.fire({
+                    toast: true,
+                    position: 'top-end', // ตำแหน่งของ Toast
+                    icon: 'error', // ไอคอน (success, error, warning, info, question)
+                    title: response.data.msg, // ข้อความหลัก
+                    showConfirmButton: false, // ไม่แสดงปุ่มยืนยัน
+                    timer: 5000, // ระยะเวลาแสดง (ms)
+                    timerProgressBar: true, // แสดงแถบเวลา
+                  });
+                }
+              });
+            } catch (error) {
+              this.showToast(error, 'error');
+              console.log('error', error);
+            }
+          }
+        },
+        
+        async getRegister() {
+          if (this.phoneNo == '') {
+            this.usersError = true;
+            this.passError = false;
+            this.textError = 'กรุณากรอกเบอรโทร';
+            $("#user-login").focus();
+            return false;
+          } else if (this.password == '') {
+            this.usersError = false;
+            this.passError1 = true;
+            this.textError1 = 'กรุณากรอกรหัสผ่าน';
+            $("#pass-login").focus();
+            return false;
+          } else if (this.password2 == '') {
+            this.passError1 = false;
+            this.passError2 = true;
+            this.textError2 = 'กรุณากรอกรหัสผ่านอีกครั้ง';
+            $("#pass-login2").focus();
+            return false;
+          } else if (this.password2 !== this.password) {
+            this.passError1 = false;
+            this.passError2 = true;
+            this.textError2 = 'กรอกรหัสผ่านไม่ตรงกัน';
+            $("#pass-login2").focus();
+            return false;
+          } else {
+            this.usersError = false;
+            this.passError = false;
+
+            try {
+              const url = '../server/';
+              const config = {
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+              }
+              await axios.post(url, {
+                post: 'register',
+                phone: this.phoneNo,
+                password: this.password2
+              }, config).then(function (response) {
+                console.log('h', response.data.msg);
+                if (response.data.code === 404) {
+                  Swal.fire({
+                    toast: true,
+                    position: 'top-end', // ตำแหน่งของ Toast
+                    icon: 'error', // ไอคอน (success, error, warning, info, question)
+                    title: response.data.msg, // ข้อความหลัก
+                    showConfirmButton: false, // ไม่แสดงปุ่มยืนยัน
+                    timer: 3000, // ระยะเวลาแสดง (ms)
+                    timerProgressBar: true, // แสดงแถบเวลา
+                  });
+                } else {
+                  localStorage.setItem("Profile", JSON.stringify(response.data.data));
+                  Swal.fire({
+                    toast: true,
+                    position: 'top-end', // ตำแหน่งของ Toast
+                    icon: 'success', // ไอคอน (success, error, warning, info, question)
+                    title: 'เข้าสู่ระบบสำเร็จ', // ข้อความหลัก
+                    showConfirmButton: false, // ไม่แสดงปุ่มยืนยัน
+                    timer: 3000, // ระยะเวลาแสดง (ms)
+                    timerProgressBar: true, // แสดงแถบเวลา
+                  });
+
+                  setTimeout(() => {
+                    window.location = '../member';
+                  }, 1200);
+                }
+
+
+              });
+            } catch (error) {
+              this.showToast(error, 'error');
+              console.log('error', error);
+            }
+          }
+        },
+        
+        async getProfile() {
+          try {
+            await axios.get(this.apiBase + '/user/profile', {
+              headers: {
+                'Authorization': 'Bearer ' + Cookies.get('accessToken')
+              }
+            })
+              .then((response) => {
+
+                localStorage.setItem("Profile", JSON.stringify(response.data.data));
+                this.showToast('เข้าสู่ระบบสำเร็จ', 'success');
+                setTimeout(() => {
+                  window.location = '../member';
+                }, 1200);
+
+              })
+              .catch((error) => {
+                this.showToast(error, 'error');
+                Toast.fire({
+                  icon: "error",
+                  title: error
+                })
+              });
+
+          } catch (error) {
+            console.error(error);
+          }
+        },
+        
+        logOut() {
+          localStorage.removeItem('Profile');
+          this.auth = '';
+          setTimeout(() => {
+            window.location = '../login';
+          }, 800);
+        },
+      }
+    }).mount('#app');
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,429 @@
+<!--
+=========================================================
+* Argon Dashboard 3 - v2.1.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright 2024 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+    <title>finshop Dashboard</title>
+    <!--     Fonts and icons     -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <!-- Nucleo Icons
+  <link href="https://demos.creative-tim.com/argon-dashboard-pro/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="https://demos.creative-tim.com/argon-dashboard-pro/assets/css/nucleo-svg.css" rel="stylesheet" />
+   -->
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/42d5adcbca.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS Files -->
+    <link
+      id="pagestyle"
+      href="../assets/css/argon-dashboard.css?v=2.1.0"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+    <script src="../assets/js/vue/vue3.js"></script>
+    <!-- axios -->
+    <script src="../assets/js/axios/axios.0.9.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+
+  <body class="">
+    <script>
+      window.location = './shope/';
+    </script>
+    <!-- Navbar -->
+    <!-- <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent mt-4">
+    <div class="container">
+      <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="../pages/dashboard.html">
+        Argon Dashboard 3
+      </a>
+      <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon mt-2">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
+              <i class="fa fa-chart-pie opacity-6  me-1"></i>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" href="../pages/profile.html">
+              <i class="fa fa-user opacity-6  me-1"></i>
+              Profile
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" href="../pages/sign-up.html">
+              <i class="fas fa-user-circle opacity-6  me-1"></i>
+              Sign Up
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" href="../pages/sign-in.html">
+              <i class="fas fa-key opacity-6  me-1"></i>
+              Sign In
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav d-lg-block d-none">
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com/product/argon-dashboard" class="btn btn-sm mb-0 me-1 bg-gradient-light">Free Download</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+    <!-- End Navbar -->
+    <main class="main-content mt-0" id="app">
+      <div
+        class="align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg"
+        
+      >
+        <span class=""></span>
+        <div class="container">
+          <div class="row justify-content-center" style="
+          background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg');
+          background-position: top;
+          background-size: 200%;
+        ">
+            <div class="col-lg-5 text-center mx-auto" style="height: 320px;">
+              <h1 class="text-white mb-2 mt-5">Welcome Sale</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center">
+          <div class="col-xl-4 col-lg-5 col-md-7 mx-auto"></div>
+        </div>
+      </div>
+    </main>
+    <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+    <footer class="footer pt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-8 mx-auto text-center mt-1">
+            <p class="mb-0 text-secondary">
+              <!-- Copyright  -->
+              ©
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              Soft by
+              <img src="../assets/img/lgg.png" width="20" alt="logo" />ɢɪɢᴀᴊᴜ
+              ꜱᴛᴜᴅɪᴏ.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+    <!--   Core JS Files   -->
+    <script src="./assets/js/core/popper.min.js"></script>
+    <script src="./assets/js/core/bootstrap.min.js"></script>
+    <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script>
+      var win = navigator.platform.indexOf("Win") > -1;
+      if (win && document.querySelector("#sidenav-scrollbar")) {
+        var options = {
+          damping: "0.5",
+        };
+        Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
+      }
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="./assets/js/argon-dashboard.min.js?v=2.1.0"></script>
+    <script type="module">
+      const { createApp } = Vue;
+      createApp({
+        data() {
+          return {
+            auth: "",
+            usersError: false,
+            passError: false,
+            textError: "",
+          };
+        },
+
+        mounted() {
+          const profile = localStorage.getItem("Profile");
+
+          if (!profile || profile === "undefined") {
+            // ตรวจสอบว่าค่าเป็น null, undefined หรือ "undefined"
+            Swal.fire({
+              toast: true,
+              position: "top-end", // ตำแหน่งของ Toast
+              icon: "warning", //ไอคอน (success, error, warning, info, question)
+              title: "session die !", // ข้อความหลัก
+              showConfirmButton: false, // ไม่แสดงปุ่มยืนยัน
+              timer: 3000, // ระยะเวลาแสดง (ms)
+              timerProgressBar: true, // แสดงแถบเวลา
+            });
+            // window.location = "login";
+          } else {
+            try {
+              const parsedProfile = JSON.parse(profile); // แปลง JSON เฉพาะเมื่อค่าถูกต้อง
+              this.userProfile = {
+                fname: parsedProfile.fname,
+                lname: parsedProfile.lname,
+                uid: parsedProfile.uid,
+                phone: parsedProfile.phone,
+                credit: parsedProfile.credit,
+              };
+            } catch (error) {
+              console.error("Invalid JSON in Profile:", error);
+              Swal.fire({
+                icon: "error",
+                title: "Invalid session data",
+                text: "Please log in again.",
+              });
+              // window.location = "login";
+            }
+          }
+        },
+        methods: {
+          getBack() {
+            window.location = "../top";
+          },
+          formatThaiDate(dateStr) {
+            return dayjs(dateStr).format("HH:mm");
+            // return dayjs(dateStr).format("D MMMM YYYY เวลา HH:mm");
+          },
+
+          showToast(txt, icn) {
+            wal.fire({
+              toast: true,
+              position: "top-end", // ตำแหน่งของ Toast
+              icon: icn, // ไอคอน (success, error, warning, info, question)
+              title: txt, // ข้อความหลัก
+              showConfirmButton: false, // ไม่แสดงปุ่มยืนยัน
+              timer: 5000, // ระยะเวลาแสดง (ms)
+              timerProgressBar: true, // แสดงแถบเวลา
+            });
+          },
+          async getLogin() {
+            if (this.username == "") {
+              this.usersError = true;
+              this.passError = false;
+              this.textError = "กรุณากรอก ชื่อเข้าใช้งาน";
+              $("#user-login").focus();
+              return false;
+            } else if (this.password == "") {
+              this.usersError = false;
+              this.passError = true;
+              this.textError = "กรุณากรอกรหัสผ่าน";
+              $("#pass-login").focus();
+              return false;
+            } else {
+              this.usersError = false;
+              this.passError = false;
+
+              try {
+                const url = "./api/";
+                const config = {
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                };
+                await axios
+                  .post(
+                    url,
+                    {
+                      post: "login",
+                      username: this.username,
+                      password: this.password,
+                    },
+                    config
+                  )
+                  .then(function (response) {
+                    if (response.data.status === true) {
+                      localStorage.setItem(
+                        "Fin-Profile",
+                        JSON.stringify(response.data.data)
+                      );
+                      Swal.fire({
+                        toast: true,
+                        position: "top-end", // ตำแหน่งของ Toast
+                        icon: "success", // ไอคอน (success, error, warning, info, question)
+                        title: response.data.msg, // ข้อความหลัก
+                        showConfirmButton: false, // ไม่แสดงปุ่มยืนยัน
+                        timer: 5000, // ระยะเวลาแสดง (ms)
+                        timerProgressBar: true, // แสดงแถบเวลา
+                      });
+                      setTimeout(() => {
+                        window.location = "./" + response.data.redirect;
+                      }, 1200);
+                    } else {
+                      Swal.fire({
+                        toast: true,
+                        position: "top-end", // ตำแหน่งของ Toast
+                        icon: "error", // ไอคอน (success, error, warning, info, question)
+                        title: response.data.msg, // ข้อความหลัก
+                        showConfirmButton: false, // ไม่แสดงปุ่มยืนยัน
+                        timer: 5000, // ระยะเวลาแสดง (ms)
+                        timerProgressBar: true, // แสดงแถบเวลา
+                      });
+                    }
+                  });
+              } catch (error) {
+                this.showToast(error, "error");
+                console.log("error", error);
+              }
+            }
+          },
+          async getRegister() {
+            if (this.phoneNo == "") {
+              this.usersError = true;
+              this.passError = false;
+              this.textError = "กรุณากรอกเบอรโทร";
+              $("#user-login").focus();
+              return false;
+            } else if (this.password == "") {
+              this.usersError = false;
+              this.passError1 = true;
+              this.textError1 = "กรุณากรอกรหัสผ่าน";
+              $("#pass-login").focus();
+              return false;
+            } else if (this.password2 == "") {
+              this.passError1 = false;
+              this.passError2 = true;
+              this.textError2 = "กรุณากรอกรหัสผ่านอีกครั้ง";
+              $("#pass-login2").focus();
+              return false;
+            } else if (this.password2 !== this.password) {
+              this.passError1 = false;
+              this.passError2 = true;
+              this.textError2 = "กรอกรหัสผ่านไม่ตรงกัน";
+              $("#pass-login2").focus();
+              return false;
+            } else {
+              this.usersError = false;
+              this.passError = false;
+
+              try {
+                const url = "../server/";
+                const config = {
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                };
+                await axios
+                  .post(
+                    url,
+                    {
+                      post: "register",
+                      phone: this.phoneNo,
+                      password: this.password2,
+                    },
+                    config
+                  )
+                  .then(function (response) {
+                    console.log("h", response.data.msg);
+                    if (response.data.code === 404) {
+                      Swal.fire({
+                        toast: true,
+                        position: "top-end", // ตำแหน่งของ Toast
+                        icon: "error", // ไอคอน (success, error, warning, info, question)
+                        title: response.data.msg, // ข้อความหลัก
+                        showConfirmButton: false, // ไม่แสดงปุ่มยืนยัน
+                        timer: 3000, // ระยะเวลาแสดง (ms)
+                        timerProgressBar: true, // แสดงแถบเวลา
+                      });
+                    } else {
+                      localStorage.setItem(
+                        "Profile",
+                        JSON.stringify(response.data.data)
+                      );
+                      Swal.fire({
+                        toast: true,
+                        position: "top-end", // ตำแหน่งของ Toast
+                        icon: "success", // ไอคอน (success, error, warning, info, question)
+                        title: "เข้าสู่ระบบสำเร็จ", // ข้อความหลัก
+                        showConfirmButton: false, // ไม่แสดงปุ่มยืนยัน
+                        timer: 3000, // ระยะเวลาแสดง (ms)
+                        timerProgressBar: true, // แสดงแถบเวลา
+                      });
+
+                      setTimeout(() => {
+                        window.location = "../member";
+                      }, 1200);
+                    }
+                  });
+              } catch (error) {
+                this.showToast(error, "error");
+                console.log("error", error);
+              }
+            }
+          },
+          async getProfile() {
+            try {
+              await axios
+                .get(this.apiBase + "/user/profile", {
+                  headers: {
+                    Authorization: "Bearer " + Cookies.get("accessToken"),
+                  },
+                })
+                .then((response) => {
+                  localStorage.setItem(
+                    "Profile",
+                    JSON.stringify(response.data.data)
+                  );
+                  this.showToast("เข้าสู่ระบบสำเร็จ", "success");
+                  setTimeout(() => {
+                    window.location = "../member";
+                  }, 1200);
+                })
+                .catch((error) => {
+                  this.showToast(error, "error");
+                  Toast.fire({
+                    icon: "error",
+                    title: error,
+                  });
+                });
+            } catch (error) {
+              console.error(error);
+            }
+          },
+          logOut() {
+            localStorage.removeItem("Profile");
+            this.auth = "";
+            setTimeout(() => {
+              window.location = "../login";
+            }, 800);
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
